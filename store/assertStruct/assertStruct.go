@@ -1,4 +1,4 @@
-package assert
+package assertStruct
 
 // 设置response响应的信息
 
