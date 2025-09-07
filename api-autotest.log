@@ -1,0 +1,9 @@
+{"level":"info","timestamp":"2025-09-07T14:21:21.287+0530","caller":"logger/logger.go:48","msg":"日志初始化完成"}
+{"level":"info","timestamp":"2025-09-07T14:26:07.212+0530","caller":"logger/logger.go:48","msg":"日志初始化完成"}
+{"level":"warn","timestamp":"2025-09-07T14:26:07.231+0530","caller":"logger/logger.go:53","msg":"有问题"}
+{"level":"error","timestamp":"2025-09-07T14:27:04.417+0530","caller":"zap@v1.27.0/sugar.go:257","msg":"Ignored key without a value.","ignored":"1111","stacktrace":"go.uber.org/zap.(*SugaredLogger).Infow\n\tC:/Users/Lenovo/Desktop/gowork/pkg/mod/go.uber.org/zap@v1.27.0/sugar.go:257\nautoTest/store/logger.Info\n\tC:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/store/logger/logger.go:48\nmain.main\n\tC:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/main.go:12\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"level":"info","timestamp":"2025-09-07T14:27:04.417+0530","caller":"logger/logger.go:48","msg":"日志初始化完成"}
+{"level":"warn","timestamp":"2025-09-07T14:27:04.434+0530","caller":"logger/logger.go:53","msg":"有问题"}
+{"level":"error","timestamp":"2025-09-07T14:27:40.017+0530","caller":"zap@v1.27.0/sugar.go:257","msg":"Ignored key without a value.","ignored":"1","stacktrace":"go.uber.org/zap.(*SugaredLogger).Infow\n\tC:/Users/Lenovo/Desktop/gowork/pkg/mod/go.uber.org/zap@v1.27.0/sugar.go:257\nautoTest/store/logger.Info\n\tC:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/store/logger/logger.go:48\nmain.main\n\tC:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/main.go:12\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"level":"info","timestamp":"2025-09-07T14:27:40.017+0530","caller":"logger/logger.go:48","msg":"日志初始化完成"}
+{"level":"warn","timestamp":"2025-09-07T14:27:40.036+0530","caller":"logger/logger.go:53","msg":"有问题"}
