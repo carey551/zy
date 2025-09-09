@@ -1,0 +1,96 @@
+?   	autoTest	[no test files]
+?   	autoTest/deskSystem/login	[no test files]
+?   	autoTest/store/assertStruct	[no test files]
+?   	autoTest/store/config	[no test files]
+?   	autoTest/store/logger	[no test files]
+?   	autoTest/store/request	[no test files]
+?   	autoTest/store/utils	[no test files]
+2025-09-09T21:27:16.923+0530	INFO	Test_desk/login2_test.go:113	全局前置：初始化测试环境
+=== RUN   TestLoginAndGetUserDetails
+=== PAUSE TestLoginAndGetUserDetails
+=== RUN   TestLoginAndEnterForum
+=== PAUSE TestLoginAndEnterForum
+=== CONT  TestLoginAndGetUserDetails
+2025-09-09T21:27:16.937+0530	INFO	Test_desk/login2_test.go:124	设置 TestLoginAndGetUserDetails
+2025-09-09T21:27:16.937+0530	INFO	Test_desk/login2_test.go:59	尝试登录	{"username": "user"}
+=== CONT  TestLoginAndEnterForum
+2025-09-09T21:27:16.937+0530	INFO	Test_desk/login2_test.go:166	设置 TestLoginAndEnterForum
+2025-09-09T21:27:16.937+0530	INFO	Test_desk/login2_test.go:59	尝试登录	{"username": "user"}
+2025-09-09T21:27:17.038+0530	INFO	Test_desk/login2_test.go:62	登录成功	{"token": "valid_token_123"}
+2025-09-09T21:27:17.038+0530	INFO	Test_desk/login2_test.go:87	进入论坛	{"token": "valid_token_123"}
+2025-09-09T21:27:17.038+0530	INFO	Test_desk/login2_test.go:62	登录成功	{"token": "valid_token_123"}
+2025-09-09T21:27:17.038+0530	INFO	Test_desk/login2_test.go:71	获取用户详情	{"token": "valid_token_123"}
+2025-09-09T21:27:17.038+0530	INFO	Test_desk/login2_test.go:94	成功进入论坛	{"response": {"code":200,"msg":"Welcome to the forum!","msgCode":"SUCCESS"}}
+2025-09-09T21:27:17.038+0530	INFO	Test_desk/login2_test.go:78	用户详情获取成功	{"response": {"code":200,"msg":"User details: name=John, age=30","msgCode":"SUCCESS"}}
+=== RUN   TestLoginAndEnterForum/SubTestInvalidToken
+=== PAUSE TestLoginAndEnterForum/SubTestInvalidToken
+2025-09-09T21:27:17.038+0530	INFO	Test_desk/login2_test.go:172	清理 TestLoginAndEnterForum
+2025-09-09T21:27:17.038+0530	INFO	Test_desk/login2_test.go:103	正在注销	{"token": "valid_token_123"}
+=== CONT  TestLoginAndEnterForum/SubTestInvalidToken
+2025-09-09T21:27:17.038+0530	INFO	Test_desk/login2_test.go:189	运行 EnterForum 的 SubTestInvalidToken
+2025-09-09T21:27:17.038+0530	INFO	Test_desk/login2_test.go:87	进入论坛	{"token": "invalid_token"}
+2025-09-09T21:27:17.038+0530	ERROR	Test_desk/login2_test.go:97	进入论坛失败	{"token": "invalid_token", "error": "unauthorized: invalid token"}
+autoTest/testcase/Test_desk.EnterForum
+	C:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/testcase/Test_desk/login2_test.go:97
+autoTest/testcase/Test_desk.TestLoginAndEnterForum.func2
+	C:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/testcase/Test_desk/login2_test.go:190
+testing.tRunner
+	C:/Program Files/Go/src/testing/testing.go:1792
+--- PASS: TestLoginAndEnterForum (0.10s)
+    --- PASS: TestLoginAndEnterForum/SubTestInvalidToken (0.00s)
+=== NAME  TestLoginAndGetUserDetails
+    login2_test.go:138: 
+        	Error Trace:	C:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/testcase/Test_desk/login2_test.go:138
+        	Error:      	Not equal: 
+        	            	expected: "User details: name=John, age=30"
+        	            	actual  : "sucess"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-User details: name=John, age=30
+        	            	+sucess
+        	Test:       	TestLoginAndGetUserDetails
+        	Messages:   	希望返回是sucess
+    login2_test.go:139: 
+        	Error Trace:	C:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/testcase/Test_desk/login2_test.go:139
+        	Error:      	Not equal: 
+        	            	expected: string("SUCCESS")
+        	            	actual  : int(0)
+        	Test:       	TestLoginAndGetUserDetails
+        	Messages:   	希望返回是0
+2025-09-09T21:27:17.039+0530	ERROR	Test_desk/login2_test.go:36	断言失败	{"test": "TestLoginAndGetUserDetails", "message": "响应消息不符合预期", "expected": "Wrong details", "actual": "User details: name=John, age=30"}
+autoTest/testcase/Test_desk.assertAndLog
+	C:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/testcase/Test_desk/login2_test.go:36
+autoTest/testcase/Test_desk.TestLoginAndGetUserDetails
+	C:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/testcase/Test_desk/login2_test.go:143
+testing.tRunner
+	C:/Program Files/Go/src/testing/testing.go:1792
+    login2_test.go:42: 
+        	Error Trace:	C:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/testcase/Test_desk/login2_test.go:42
+        	            				C:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/testcase/Test_desk/login2_test.go:143
+        	Error:      	Should be true
+        	Test:       	TestLoginAndGetUserDetails
+        	Messages:   	响应消息不符合预期%!(EXTRA []zapcore.Field=[{expected 15 0 Wrong details <nil>} {actual 15 0 User details: name=John, age=30 <nil>}])
+=== RUN   TestLoginAndGetUserDetails/SubTestInvalidToken
+=== PAUSE TestLoginAndGetUserDetails/SubTestInvalidToken
+=== CONT  TestLoginAndGetUserDetails/SubTestInvalidToken
+2025-09-09T21:27:17.039+0530	INFO	Test_desk/login2_test.go:151	运行 GetUserDetails 的 SubTestInvalidToken
+2025-09-09T21:27:17.039+0530	INFO	Test_desk/login2_test.go:71	获取用户详情	{"token": "invalid_token"}
+2025-09-09T21:27:17.039+0530	ERROR	Test_desk/login2_test.go:81	获取用户详情失败	{"token": "invalid_token", "error": "unauthorized: invalid token"}
+autoTest/testcase/Test_desk.GetUserDetails
+	C:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/testcase/Test_desk/login2_test.go:81
+autoTest/testcase/Test_desk.TestLoginAndGetUserDetails.func2
+	C:/Users/Lenovo/Desktop/gowork/src/ar9_api_autoTest/testcase/Test_desk/login2_test.go:152
+testing.tRunner
+	C:/Program Files/Go/src/testing/testing.go:1792
+2025-09-09T21:27:17.039+0530	INFO	Test_desk/login2_test.go:130	清理 TestLoginAndGetUserDetails
+2025-09-09T21:27:17.039+0530	INFO	Test_desk/login2_test.go:103	正在注销	{"token": "valid_token_123"}
+--- FAIL: TestLoginAndGetUserDetails (0.10s)
+    --- PASS: TestLoginAndGetUserDetails/SubTestInvalidToken (0.00s)
+FAIL
+2025-09-09T21:27:17.041+0530	INFO	Test_desk/login2_test.go:115	全局后置：清理测试环境
+FAIL	autoTest/testcase/Test_desk	1.154s
+?   	autoTest/testcase/output	[no test files]
+FAIL

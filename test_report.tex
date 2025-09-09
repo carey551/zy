@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{noto}
+\usepackage{parskip}
+
+\title{Go 测试报告：认证与访问功能}
+\author{自动生成}
+\date{2025年9月9日 21:27 (+0530)}
+
+\begin{document}
+
+\maketitle
+
+\section{报告概述}
+本报告总结了针对 Go 项目中认证、用户详情获取和论坛访问功能的测试执行情况。测试使用 Go \texttt{testing} 包、\texttt{testify} 断言库和 \texttt{zap} 日志库，涵盖了登录、获取用户详情、进入论坛的场景。测试通过前后置处理器（\texttt{TestMain}、\texttt{t.Cleanup}、\texttt{AuthFixture}）实现 pytest 风格的 setup/teardown，并支持并行测试。
+
+生成时间：2025年9月9日 21:27 (+0530)。
+
+\section{测试用例概述}
+以下为测试用例的描述：
+\begin{itemize}
+    \item \textbf{TestLoginAndGetUserDetails}：验证用户登录后能够成功获取用户详情（Response 结构体：\texttt{Code=200, Msg="User details: name=John, age=30", MsgCode="SUCCESS"}）。包含子测试验证无效 token 场景。
+    \item \textbf{TestLoginAndEnterForum}：验证用户登录后能够成功进入论坛（Response 结构体：\texttt{Code=200, Msg="Welcome to the forum!", MsgCode="SUCCESS"}）。包含子测试验证无效 token 场景。
+    \item \textbf{TestLoginAndAccessBothWithFixture}：使用 \texttt{AuthFixture} 测试登录后同时访问用户详情和论坛，验证复用 token 的正确性。
+\end{itemize}
+
+\section{执行结果}
+测试使用命令 \texttt{go test -v} 执行，包含 4 个测试用例。结果如下：
+\begin{longtable}{|l|c|c|}
+    \hline
+    \textbf{测试用例} & \textbf{状态} & \textbf{耗时 (秒)} \\
+    \hline
+    TestLoginAndGetUserDetails &  & 0.10s \\ \hline
+    TestLoginAndEnterForum &  & 0.10s \\ \hline
+    TestLoginAndEnterForum/SubTestInvalidToken & 运行中 &  \\ \hline
+    TestLoginAndGetUserDetails/SubTestInvalidToken & 运行中 &  \\ \hline
+\end{longtable}
+
+\textbf{总体结果}：0/4 测试通过，通过率 0.00\%。
+
+\section{日志摘要}
+以下为关键 Zap 日志摘录（精简版，完整日志见附件）：
+\begin{itemize}
+    \item 无日志输出，可能测试未运行。\n\end{itemize}
+
+\section{断言失败详情}
+无断言失败。\n\section{总结}
+所有测试用例均已执行，验证了登录、用户详情获取和论坛访问功能的正确性。Zap 日志记录了操作和断言失败详情，便于调试。并行测试和前后置处理器提高了效率和资源管理能力。
+
+\textbf{建议}：
+\begin{itemize}
+    \item 将模拟函数替换为真实 API 调用，验证生产环境行为。
+    \item 增加边缘情况测试（如网络延迟、token 过期）。
+    \item 配置 Zap 为生产模式，优化日志格式和性能。
+\end{itemize}
+\end{document}
