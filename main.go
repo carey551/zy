@@ -3,7 +3,6 @@ package main
 import (
 	_ "autoTest/store/config"
 	"autoTest/store/logger"
-	"autoTest/testcase/output"
 )
 
 // func main() {
@@ -28,5 +27,4 @@ import (
 func main() {
 	// 初始化日志
 	logger.InitLogger()
-	output.RunPore()
 }
